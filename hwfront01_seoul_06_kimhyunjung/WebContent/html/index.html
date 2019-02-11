@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 style="color: orange; text-align: center;">Become a Member</h1>
+	<hr color="orange">
+	<br>
+	<form action="welcome.html">
+		<fieldset>
+			<legend style="color: green; font-weight: bold;">Registration
+				Information</legend>
+
+			<table style="text-align: right;">
+				<tr>
+					<td><label for="email">E-Mail:</label></td>
+					<td><input type="email" id="email"></td>
+				</tr>
+				<tr>
+					<td><label for="password">Password:</label></td>
+					<td><input type="password" id="password"
+						placeholder="At least 6 letters or numbers"></td>
+				</tr>
+				<tr>
+					<td><label for="password2">Verify Password:</label></td>
+					<td><input type="password" id="password2"></td>
+				</tr>
+			</table>
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend style="color: green; font-weight: bold;">Member
+				Information</legend>
+			<table style="text-align: right;">
+				<tr>
+					<td><label for="firstname">First Name:</label></td>
+					<td><input type="text" id="firstname"></td>
+				</tr>
+				<tr>
+					<td><label for="lastname">Last Name:</label></td>
+					<td><input type="text" id=""lastname""></td>
+				</tr>
+				<tr>
+					<td><label for="address">Address:</label></td>
+					<td><input type="text" id="address"></td>
+				</tr>
+				<tr>
+					<td><label for="ciy">City:</label></td>
+					<td><input type="text" id="city"></td>
+				</tr>
+				<tr>
+					<td><label for="state">State:</label></td>
+					<td><input type="text" id="state"
+						placeholder="2-character code"></td>
+				</tr>
+				<tr>
+					<td><label for="zip">ZIP Code:</label></td>
+					<td><input type="text" id="zip" placeholder="5 or 9 digits"></td>
+				</tr>
+				<tr>
+					<td><label for="phone">Phone Number:</label></td>
+					<td><input type="tel" id="phone" placeholder="999-999-9999"></td>
+				</tr>
+			</table>
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend style="color: green; font-weight: bold;">Membership
+				Information</legend>
+			<table style="text-align: right;">
+				<tr>
+					<td><label for="membership">Membership Type:</label></td>
+					<td>
+						<select id="membership">
+							<option>Junior</option>
+							<option>Senior</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="start">Starting Date:</label></td>
+					<td><input type="date" id="start"></td>
+				</tr>
+				<tr>
+					<td><label for="tickets">Tickets for Guests:</label></td>
+					<td><input type="number" id="tickets"></td>
+				</tr>
+			</table>
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend style="color: green; font-weight: bold;">Submit Your
+				Membership</legend>
+			<div align="right">
+				<input type="submit" value="Submit"> 
+				<input type="reset" value="Reset Fields">
+			</div>
+		</fieldset>
+	</form>
+	<hr color="orange">
+	<p align="right">Copyright 2013 SCSA.</p>
+</body>
+</html>
