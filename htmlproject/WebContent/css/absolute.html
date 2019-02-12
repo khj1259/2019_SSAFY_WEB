@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#wrap {
+	position: relative; /* 부모는 relative로 지정해야 함 */
+	width: 300px;
+	height: 300px;
+	border: 1px solid #ccc;
+}
+
+.box {
+	position: absolute; /* 자식을 포함하는 부모 요소를 기준으로 그안에서 좌표값 기준으로 배치됨 */
+	width: 50px;
+	height: 50px;
+	background-color: blue;
+}
+
+#box1 {
+	top: 0;
+	left: 0;
+}
+
+#box2 {
+	top: 0;
+	right: 0;
+}
+
+#box3 {
+	bottom: 0;
+	left: 0;
+}
+
+#box4 {
+	bottom: 0;
+	right: 0;
+}
+
+#fix {
+	position: fixed;/* 브라우저 창 기준 */
+	top: 35px;
+	right: 35px;
+	width: 50px;
+	height: 50px;
+	background-color: green;
+}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="box" id="box1"></div>
+		<div class="box" id="box2"></div>
+		<div class="box" id="box3"></div>
+		<div class="box" id="box4"></div>
+	</div>
+
+	<div id="fix"></div>
+</body>
+</html>

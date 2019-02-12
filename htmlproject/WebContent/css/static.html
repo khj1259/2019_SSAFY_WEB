@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.div1 {
+	position: static;
+	width: 100px;
+	background-color: red;
+	padding: 120px;
+	float: left;
+}
+
+.div2 {
+	float: left; position : static;
+	width: 100px;
+	background-color: blue;
+	padding: 120px;
+	position: static;
+
+	/* 
+position: static;인 경우 left, top 적용되지 않음
+left: 50px;/* 화면 왼쪽으로부터 얼마나 떨어져 있는지
+top: 100px;/* 화면 위쪽으로부터 얼마나 떨어져 있는지 */
+}
+</style>
+</head>
+<body>
+	<div class="div1">div-1</div>
+	<div class="div2">div-2</div>
+</body>
+</html>
