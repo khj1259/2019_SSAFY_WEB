@@ -15,10 +15,10 @@ public class Solution_1240_SW문제해결응용1일차_단순2진암호코드_�
 			int N = Integer.parseInt(st.nextToken());//배열의 세로 크기
 			int M = Integer.parseInt(st.nextToken());//배열의 가로 크기
 			br.readLine();
-			int sum1=0;
-			int sum2=0;
 //			int[][] code = new int[N][M];
 			for(int k=0; k<N; k++) {
+				int sum1=0;
+				int sum2=0;
 				String code = br.readLine();//여러번 
 				
 				if(code.contains("1")) {
