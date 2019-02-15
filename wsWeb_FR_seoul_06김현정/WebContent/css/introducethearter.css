@@ -1,0 +1,168 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+body {
+	margin: 0 auto;
+	padding: 22px 0;
+	width: 940px;
+	font: 13px/22px Helvetica, Arial, sans-serif;
+	background: #F0F0F0;
+}
+
+header, footer, section{
+	display: block;
+}
+
+
+header a{
+	text-decoration: none;
+	color: black;
+}
+
+h1, h2 {
+	font-size: 28px;
+	line-height: 44px;
+	padding: 11px 0;
+}
+
+h3 {
+	font-size: 18px;
+	line-height: 22px;
+	padding: 11px 0;
+}
+
+/* - nav - */
+nav {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background:	black;
+}
+
+	nav ul {
+		margin: 0 auto;
+		width: 940px;
+		list-style: none;
+	}
+
+		nav ul li {
+			float: left;
+		}
+		
+			nav ul li a {
+				display: block;
+				margin-right: 20px;
+				width: 140px;
+				font-size: 14px;
+				line-height: 44px;
+				text-align: center;
+				text-decoration: none;
+				color: #777;
+			}
+			
+				nav ul li a:hover {
+					color: #fff;
+				}
+			
+			nav ul li.selected a {
+				color: #fff;
+			}
+			
+			nav ul li.subscribe a {
+				margin-left: 22px;
+				padding-left: 33px;
+				text-align: left;
+				background: url("img/rss.png") left center no-repeat;
+			}
+			
+				ul  ul { /*ul 아래 ul이 처음엔 안보이게 함*/
+					display: none;
+					width:20%;
+				}
+				
+				ul li:hover ul { /* ul 아래 마우스가 올라간 li(li:hover) 아래의 ul*/
+					display: block; /*block--> ul 보이게 함*/
+					position : absolute;
+					background:	black;
+					z-index: 9999;
+				}
+				
+/* - section - */
+
+section{
+	position: relative;
+	width: 100%;
+	margin-top: 45px;
+	margin-bottom: 20px;
+}
+	section content{
+		height:50%;
+	}
+		section content img{
+			width:100%;
+		}
+	
+	section .introduce{
+		height:50%;
+	}
+	
+	section .introduce fieldset{
+		border-style: groove;
+	}
+	
+	section .introduce img{
+		width: 100%;
+	}
+	
+	
+	
+footer {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background: #222;
+}
+
+	footer div {
+		display: table;
+		margin: 0 auto;
+		padding: 10px 0;
+		width: 940px;
+		height: 70px;
+		color: #777;
+	}
+	
+		footer div section {
+			display: table-cell;
+			width: 300px;
+		}
+		
+		footer div #about, footer div #security {
+			padding-right: 20px;
+		}
+		
+	footer h3 {
+		color: #FFF;
+	}
+	
+	footer a {
+		color: #999;
+	}
+	
+		footer a:hover {
+			color: #FFF;
+			text-decoration: none;
+		}
+	
+	footer ul {
+		margin: 0 0 0 40px;
+		list-style: square;
+		color: #565656;
+	}
+	
+		footer ul li a {
+			display: block;
+		}
