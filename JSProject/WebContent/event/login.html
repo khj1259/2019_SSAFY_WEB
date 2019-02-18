@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//id, pass 칸에 값이 입력되었는지 체크하고 폼전송
+	function check() {
+		//1. id, pass 엘리먼트 알아오기
+		var id = document.getElementById("id");
+		var pass = document.getElementById("pass");
+		//엘리먼트 안의 값 알아내기
+		var idvalue = id.value;
+		var passvalue = pass.value;
+		
+		var idval = document.getElementById("id").value;
+		
+		if(idvalue == ''){
+			alert("id를 입력해주세요");
+			return;
+		}else if(passvalue == ''){
+			alert("pass를 입력해주세요");
+			return;
+		}
+		/* alert(idvalue);
+		alert(passvalue); */
+		// form 값이 정상이면 submit 하기 -> 문서안에서 form을 알아낸 후 전송
+		var f = document.getElementById("f");
+		f.action = "other.html";
+		f.method = "get";
+		f.submit(); //전송
+		
+	}
+</script>
+</head>
+<body>
+	<h1>Login</h1>
+	<form action="welcome.html" method="post" id="f">
+		ID:<input type="text" name="id" id="id"><br> 
+		PASS:<input type="password" name="pass" id="pass"><br>
+		<input type="button" value="로그인" onclick="check()">
+	</form>
+</body>
+</html>

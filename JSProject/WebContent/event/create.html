@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#result{
+		width: 500px;
+		height: 300px;
+		border: 2px solid blue;
+		overflow: auto; /* div 안의 내용물이 넘치면 자동으로 스크롤바가 생기도록 지정 */
+	}
+</style>
+<script type="text/javascript">
+	var cnt = 0;
+	function create() {
+		//<h1>hello-1</h1> 를 생성한 후 div안에 붙이기
+		var h1 = document.createElement("h1");//h1 엘리먼트 생성 <h1></h1>
+		var txt = document.createTextNode("hello-" + ++cnt); //hello-1
+		h1.appendChild(txt);//<h1>hello-1</h1>
+		h1.setAttribute('onclick', 'del(this)');
+		var result = document.getElementById("result");
+		result.appendChild(h1);
+		
+		//<p>welcome</p>
+		/* var p = document.createElement("p")
+		var txt = document.createTextNode("welcome");
+		p.appendChild(txt);
+		document.getElementById("result").appendChild(p); */
+		
+		//<a href="hello.html">gogo</a>
+		/* var a = document.createElement("a");
+		a.setAttribute('href', 'hello.html');
+		var txt = document.createTextNode("gogo");
+		var br = document.createElement('br');
+		a.appendChild(txt);
+		a.appendChild(br);
+		document.getElementById("result").appendChild(a); */
+	}
+	
+	function del(node) {
+		node.parentNode.removeChild(node);
+	}
+</script>
+</head>
+<body>
+ <h1>DOM Create</h1>
+ <input type="button" value="create" onclick="create()">
+ <hr>
+ <div id="result">
+ 
+ </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function check() {
+		//1.id칸이 비었나 체크 -> alert
+		var idval = document.getElementById("id").value;
+		if(idval == ''){
+			alert('id를 입력하세요');
+			return;
+		}
+		//2.pass칸이 비었나 체크 && pass길이가 5~10글자 사이인지 체크
+		var passval = document.getElementById("pass").value;
+		if(passval == ''){
+			alert('pass를 입력하세요');
+			return;
+		}
+		if(passval.length < 5 || passval.length > 10){
+			alert('pass는 5~10글자 사이어야 합니다');
+			return;
+		}
+	}
+	
+	function find() {
+		open("findData.html", "", "width=400px height=400px");
+	}
+	
+</script>
+</head>
+<body>
+<h1>Join Member</h1>
+ID:<input type="text" name="id" id="id"><br>
+PASS:<input type="password" name="pass" id="pass"><br>
+<input type="button" value="ckeck" onclick="check()"><br><hr>
+<input type="text" name="value1" id="value1">
+<input type="text" name="value2" id="value2">
+<input type="button" value="find" onclick="find()">
+
+</body>
+</html>

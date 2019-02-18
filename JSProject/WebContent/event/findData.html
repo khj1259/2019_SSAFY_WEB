@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function process(that) {
+		//눌려진 링크의 내용을 알아와서 alert로 표시하기
+		var id = that.id;
+		//var val = that.href;
+		var val1 = id.substring(0, 5); //0~4 우편번호
+		var val2 = id.substring(5);	//5~end 주소
+		//console.log(val1);
+		//console.log(val2);
+		
+		var value1 = opener.document.getElementById('value1'); //opener - 현재창을 열어준 창
+		var value2 = opener.document.getElementById('value2');
+		
+		value1.value = val1;
+		value2.value = val2;
+		close();
+	}
+</script>
+</head>
+<body>
+	<h1>find Data</h1>
+	<a href="#" id="12345서울시 강남구 역삼1동" onclick="process(this)">12345 서울시 강남구 역삼1동</a><br>
+	<a href="#" id="13579서울시 종로구 종로1동" onclick="process(this)">13579 서울시 종로구 종로1동</a><br>
+	<a href="#" id="17788서울시 영등포구 여의도동" onclick="process(this)">17788 서울시 영등포구 여의도동</a><br>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//1.선언적 함수 : 이름이 있는 함수 (8~10: 함수의 정의)
+	function test() {
+		alert("hello, function!!!")
+	}
+	
+	function add(x, y) {
+		alert(x+y);
+	}
+	
+	function multi(a, b) {
+		return a * b;
+	}
+	
+	//숫자 두개를 입력받아 그 중 큰수를 리턴하는 max()
+	//이름을 입력받아 그 뒤에 "hello"를 붙여 브라우저에 출력하는 hello()
+	//문자열 msg와 횟수count를 입력받아 횟수만큼 msg를 브라우저에 출력하는 loopString()-한줄에 하나씩
+	
+	function max(su1, su2) {
+		return (su1 > su2) ? su1:su2;
+	}
+	
+	function hello(name) {
+		document.write(name+" hello<br>");
+	}
+	
+	function loopString(msg, count) {
+		for(i=0; i<count; i++){
+			document.write(msg+"<br>");
+		}
+	}
+	
+//함수의 사용
+	//test();
+	//add(3, 6);
+	var result = multi(3, 5);
+	document.write(result+"<br>");
+	
+	var su = max(1, 5);
+	document.write(su+"<br>");
+	hello('hyunjung');
+	loopString('java web', 4);
+</script>
+</head>
+<body>
+
+</body>
+</html>
