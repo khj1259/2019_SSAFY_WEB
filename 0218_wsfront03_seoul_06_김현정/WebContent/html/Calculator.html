@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/calculate.css" type="text/css" media="screen" />
+<script type="text/javascript">
+	var msg = '';
+	var result = 0;
+	var cnt = 0;
+	var op = ''; //연산자
+	var su = ''; //숫자
+	function calculate(bt) {
+		var val = bt.value;
+		msg += val;
+		var tf = document.getElementById('tf');
+		if(bt.className == 'op'){
+			if(op==''){ //이전에 저장돼 있던 연산자를 검사해서 계산
+				result = su;
+			}else if(op=='+'){
+				result += su;
+			}else if(op=='-'){
+				result -= su;
+			}else if(op=='*'){
+				result *= su;
+			}else if(op=='/'){
+				result /= su;
+			}
+			op = val; //새로운 연산자 저장
+			su = '';  //입력값 초기화
+			if(op=='CE'){
+				result = 0;
+				msg = '';
+			}else if(op=='='){
+				var div = document.getElementById("result");
+				var txt = document.createTextNode(++cnt+". "+msg+result);
+				div.appendChild(txt);
+				var br = document.createElement('br');
+				div.appendChild(br);
+				result = 0;
+				msg = '';
+				op = '';
+			}
+		}else{
+			su += val
+			su *= 1; // 문자를 숫자타입으로 바꾸기
+		}
+			
+		tf.setAttribute('value', msg);
+	}
+	
+</script>
+</head>
+<body>
+	<input type="text" placeholder="0.0" id="tf"><br>
+	<input type="button" value="7" onclick="calculate(this)" class="su">
+	<input type="button" value="8" onclick="calculate(this)" class="su">
+	<input type="button" value="9" onclick="calculate(this)" class="su">
+	<input type="button" value="+" onclick="calculate(this)" class="op"><br>
+	<input type="button" value="4" onclick="calculate(this)" class="su">
+	<input type="button" value="5" onclick="calculate(this)" class="su">
+	<input type="button" value="6" onclick="calculate(this)" class="su">
+	<input type="button" value="-" onclick="calculate(this)" class="op"><br>
+	<input type="button" value="1" onclick="calculate(this)" class="su">
+	<input type="button" value="2" onclick="calculate(this)" class="su">
+	<input type="button" value="3" onclick="calculate(this)" class="su">
+	<input type="button" value="*" onclick="calculate(this)" class="op"><br>
+	<input type="button" value="0" onclick="calculate(this)" class="su">
+	<input type="button" value="CE" onclick="calculate(this)" class="op">
+	<input type="button" value="=" onclick="calculate(this)" class="op">
+	<input type="button" value="/" onclick="calculate(this)" class="op"><br>
+	<div id="result">
+	
+	</div>
+</body>
+</html>
