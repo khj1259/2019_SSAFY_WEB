@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.reverse{
+		background-color: black;
+		color: white;
+	}
+	.orange{
+		color: orange;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		/* $('h1').click(function () {
+			alert($(this).html()); //this 는 해당 선택자를 의미 -> $('h1')
+		}); */
+		
+		$('h1').on('click', function () { //이벤트 등록
+			alert($(this).html()); 
+		});
+		
+		//$('h1').off('click');//이벤트 해지
+		
+		$('h1').mouseenter(function () {
+			$(this).addClass('reverse');//class등록
+		});
+		$('h1').mouseleave(function () {
+			$(this).removeClass('reverse');//class삭제
+		});
+		
+		$('button:first').click(function () {
+			//$('h1, h2').addClass('orange');
+			$('h1').hide();
+		});
+		$('button:eq(1)').click(function () {
+			//$('h1, h2').removeClass('orange');
+			$('h1').show(); 
+		});
+		$('button:eq(2)').click(function () {
+			$('h1, h2').toggleClass('orange');
+		});
+		/* $('button:last').click(function () {}); */
+	});
+</script>
+</head>
+<body>
+	<button>hide</button>
+	<button>show</button>
+	<button>toggle</button>
+	<hr>
+	<h1>header - 0</h1>
+	<h1>header - 1</h1>
+	<h1>header - 2</h1>
+	
+	<h2>header - 3</h2>
+	<h2>header - 4</h2>
+</body>
+</html>

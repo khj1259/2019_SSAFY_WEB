@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('button').click(function () {
+			//jquery에서 엘리먼트 생성
+			var h1 = $('<h1>hello</h1>');//h1 엘리먼트 생성
+			$('#here').append(h1);
+			
+			var img = $('<img/>');
+			img.attr('src', '../images/naples.png');
+			img.appendTo('#there');
+			
+			var img2 = $('<img/>', { //태그를 만들때 json형식으로 속성을 여러개 줄 수 있다.
+				src:'../images/galic.jpg',
+				width:'200px',
+				height:'300px'
+			});
+			img2.appendTo('#there');
+		});
+	});
+</script>
+</head>
+<body>
+	<button>create</button>
+	<div id="here"></div>
+	<div id="there"></div>
+</body>
+</html>
