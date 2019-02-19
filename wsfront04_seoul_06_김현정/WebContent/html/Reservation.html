@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>빠른 예매</title>
+<style type="text/css">
+	img{
+		width: 350px;
+		height: 400px;
+	}
+	#money1{
+		text-decoration: line-through;
+	}
+	#money2{
+		text-decoration: underline;
+	}
+	div{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		var person = $('#person').val();
+		var money = 9000;
+		$('#money').val(person * 9000);
+		$('#person').click(function () {
+			if($(':radio:checked').index() == 1){
+				money = 5000;
+				person = $('#person').val();
+				$('#money').val(person * money);
+			}else{
+				money = 9000;
+				person = $('#person').val();
+				$('#money').val(person * money);
+			}
+		});
+		
+		$(':radio').click(function () {
+			if($(':radio:checked').index() == 1){
+				money = 5000;
+				person = $('#person').val();
+				$('#money').val(person * money);
+			}else{
+				money = 9000;
+				person = $('#person').val();
+				$('#money').val(person * money);
+			}
+		});
+		
+		$('#option').hide();
+		$(':checkbox').click(function () {
+			$('#option').slideToggle();
+		})
+		
+	});
+</script>
+</head>
+<body>
+	<h1>영화 예매</h1>
+	<h2>쿵푸팬더</h2>
+	<!-- <img alt="쿵푸팬더" src="../img/movie_image2.jpg"> -->
+	<br>
+	<label>상영관</label>
+	<select>
+		<option>CGV</option>
+		<option>Mega Box</option>
+		<option>Lotte Cinema</option>
+	</select>
+	<label>날짜 선택</label>
+	<input type="date">
+	<fieldset>
+		<legend>시간선택</legend>
+		<input type="radio" name="time">08:30
+		<input type="radio" name="time">11:00
+		<input type="radio" name="time">14:20
+		<input type="radio" name="time">17:25
+		<input type="radio" name="time">20:10
+		<input type="radio" name="time">23:05
+	</fieldset>
+	<div>
+		<label>요금</label> <span id="money1">W9,000</span>&nbsp;&nbsp;<span id="money2">W5,000</span><br>
+	</div>
+	<div>
+		<label>인원</label> <input type="number" value="1" id="person"><br>
+	</div>
+	<div>
+		<label>금액</label> <input type="text" placeholder="0" id="money"><br>
+	</div>
+	<div>
+		<label><input type="checkbox">추가</label>
+	</div>
+	<div id="option">
+		<fieldset>
+			<legend>옵션</legend>
+			<input type="checkbox">팝콘
+			<input type="checkbox">콜라
+		</fieldset>
+	</div>
+</body>
+</html>
