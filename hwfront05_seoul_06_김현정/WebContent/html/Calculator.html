@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/calculate.css" type="text/css" media="screen" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function () {
+		var msg = '';
+		var result = 0;
+		var cnt = 0;
+		var op = ''; //연산자
+		var su = ''; //숫자
+		$(':button').click(function () {
+			var val = $(this).val();
+			console.log(val);
+			msg += val;
+			console.log(msg);
+			var tf = $('#tf');
+			if($(this).attr('class') == 'op'){
+				if(op==''){ //이전에 저장돼 있던 연산자를 검사해서 계산
+					result = su;
+				}else if(op=='+'){
+					result += su;
+				}else if(op=='-'){
+					result -= su;
+				}else if(op=='*'){
+					result *= su;
+				}else if(op=='/'){
+					result /= su;
+				}
+				op = val; //새로운 연산자 저장
+				su = '';  //입력값 초기화
+				if(op=='CE'){
+					result = 0;
+					msg = '';
+				}else if(op=='='){
+					var div = $('#result');
+					//var txt = document.createTextNode(++cnt+". "+msg+result);
+					div.append(++cnt+". "+msg+result+'<br>')
+					//var br = document.createElement('br');
+					//div.appendChild(br);
+					result = 0;
+					msg = '';
+					op = '';
+				}
+			}else{
+				su += val
+				su *= 1; // 문자를 숫자타입으로 바꾸기
+			}
+			
+			tf.attr('value', msg);
+		});
+		
+	});
+	
+	
+</script>
+</head>
+<body>
+	<input type="text" placeholder="0.0" id="tf"><br>
+	<input type="button" value="7" class="su">
+	<input type="button" value="8" class="su">
+	<input type="button" value="9" class="su">
+	<input type="button" value="+" class="op"><br>
+	<input type="button" value="4" class="su">
+	<input type="button" value="5" class="su">
+	<input type="button" value="6" class="su">
+	<input type="button" value="-" class="op"><br>
+	<input type="button" value="1" class="su">
+	<input type="button" value="2" class="su">
+	<input type="button" value="3" class="su">
+	<input type="button" value="*" class="op"><br>
+	<input type="button" value="0" class="su">
+	<input type="button" value="CE" class="op">
+	<input type="button" value="=" class="op">
+	<input type="button" value="/" class="op"><br>
+	<div id="result">
+	
+	</div>
+</body>
+</html>
