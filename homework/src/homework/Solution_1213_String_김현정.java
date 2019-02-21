@@ -12,9 +12,7 @@ public class Solution_1213_String_김현정 {
 			
 			String[] parts = st.split(find);
 			int answer = parts.length-1;
-			if(st.startsWith(find)) {
-				answer++;
-			}
+			//맨앞에 있을때는 괜찮음
 			if(st.endsWith(find)) {
 				answer++;
 			}
