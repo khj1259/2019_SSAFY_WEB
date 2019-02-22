@@ -1,0 +1,54 @@
+body {
+	margin: 0 auto;
+	padding: 22px 0;
+	width: 940px;
+	font: 13px/22px Helvetica, Arial, sans-serif;
+}
+
+#header{
+	background-color: black;
+	width: 100%;
+	height: 80px;
+	color: white;
+	text-align: center;
+	line-height: 80px;
+}
+
+#content{
+	
+}
+table{
+	width: 100%;
+	margin-top: 10px;
+	
+}
+
+th{
+	font-size: 15pt;
+}
+tr{
+	text-align: center;
+	font-size: 15pt;
+	margin: 0;
+}
+
+img{
+	width: 200px;
+	height: 200px;
+}
+
+#price{
+	background-color: orange;
+	width: 100%;
+	height: 60px;
+	text-align: right;
+	font-size: 15pt;
+	line-height: 60px;
+	font-weight: bold;
+}
+
+#link{
+	text-align: center;
+	margin-top: 10px;
+	font-size: 13pt;
+}

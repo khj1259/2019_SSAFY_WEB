@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<title>SSAFY 극장</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../css/layout2.css" type="text/css" media="screen" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('.vedio').click(function () {
+			var id = $(this).attr('id');
+			var vedio = $('#vedio').children(':eq(0)');
+			if(id == 'vd1'){
+				vedio.attr('src', '../media/KungFuPanda_Sample.mp4');
+			}else if(id == 'vd2'){
+				vedio.attr('src', '../media/avengers.mp4');
+			}else{
+				vedio.attr('src', '../media/BigBuck.theora.ogv');
+			}
+		});
+		$('.wish').click(function () {
+			var idx = $(this).parent().index();
+			console.log($(this).parent().index());
+			localStorage.setItem('dvd'+idx, idx);
+		});
+		//localStorage.clear();
+	});
+</script>
+</head>
+<body>
+
+	<header>
+		<h1>SSAFY 극장</h1>
+	</header>
+	<nav>
+		<ul>
+			<li class="selected"><a href="#">최신DVD</a>
+			</li>
+			<li class="menu2"><a href="#">DVD목록</a>
+			</li>
+			<li class="menu3"><a href="wishList.html">찜리스트</a>
+			</li>
+		</ul>
+	</nav>
+	<section id="intro">
+		<header>
+			<h2>무공해 힐링 시네마</h2>
+		</header>
+		<p>무공해 힐링 시네마는 새로운 개념의 영화장르의 한가지를 말하는 것입니다. 지친 영혼을 위한 휴식을 주는 영화나,
+			마음을 정화시키고 치유하는 힘을 가진 영화들 ... .</p>
+	</section>
+	<div id="content">
+		<div id="mainContent">
+			<section>
+				<article class="blogPost">
+					<div>
+						<div id="vedio">
+							<video src="../media/KungFuPanda_Sample.mp4" width="350" height="350" controls="controls">
+								Your browser does not support the video tag.
+							</video>
+						</div>
+						<div id="list">
+						<ul>
+							<li>
+								<h1>쿵푸팬더</h1>
+								<img alt="쿵푸팬더" src="../img/movie_image2.jpg">
+								<button class="vedio" id="vd1">미리보기</button>
+								<button class="wish">찜하기</button>
+							</li>
+							<li>
+								<h1>어벤져스</h1>
+								<img alt="어벤져스" src="../img/TheAvengers2012Poster.jpg">
+								<button class="vedio" id="vd2">미리보기</button>
+								<button class="wish">찜하기</button>
+							</li>
+							<li>
+								<h1>빅벅</h1>
+								<img alt="빅벅" src="../img/BigBuck.jpg">
+								<button class="vedio" id="vd3">미리보기</button>
+								<button class="wish">찜하기</button>
+							</li>
+						</ul>
+						</div>
+					</div>
+				</article>
+			</section>
+		</div>
+	</div>
+	<footer>
+		<div>
+			<section id="about">
+				<h3>About</h3>
+				<p>
+					서울 강남 역상 멀티캠퍼스. <br /> <a href="#">ssafy@ssafy.com</a>
+				</p>
+			</section>
+			<section id="security">
+				<h3>개인정보 취급 방침</h3>
+				<ul>
+					<li><a href="#">개요</a></li>
+					<li><a href="#">문의처</a></li>
+				</ul>
+			</section>
+			<section id="notice">
+				<h3>공지사항</h3>
+				<ul>
+					<li><a href="#">오시는 길</a></li>
+					<li><a href="#">오류시 문의사항</a></li>
+				</ul>
+			</section>
+		</div>
+	</footer>
+</body>
+</html>

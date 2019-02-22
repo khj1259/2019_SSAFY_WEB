@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>찜리스트</title>
+<link rel="stylesheet" href="../css/wishList.css" type="text/css" media="screen" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		var price = 0;
+		for(var i = 0; i < localStorage.length;i++){ 
+			var key = localStorage.key(i); //key 
+			var value = localStorage[key];//value
+			console.log(value);
+			var tr = $('<tr></tr>');
+			if(value == '0'){
+				tr.append('<td><img src="../img/movie_image2.jpg"></td>');
+				tr.append('<td>1001</td>');
+				tr.append('<td>쿵푸팬더</td>');
+			}else if(value == '1'){
+				tr.append('<td><img src="../img/TheAvengers2012Poster.jpg"></td>');
+				tr.append('<td>1002</td>');
+				tr.append('<td>어벤져스</td>');
+			}else if(value == '2'){
+				tr.append('<td><img src="../img/BigBuck.jpg"></td>');
+				tr.append('<td>1003</td>');
+				tr.append('<td>빅벅</td>');
+			}
+			tr.append('<td>3000</td>');
+			tr.append('<td><button id="'+key+'">삭제</button>');
+			$('table').append(tr);
+			price += 3000;
+		}
+		
+		$('#price').append('주문가격 : '+price);
+		
+		$('button').click(function () {
+			var key = $(this).attr('id');
+			console.log(i);
+			delete localStorage[key];
+			location.reload();
+		});
+
+	});
+</script>
+</head>
+<body>
+	<div id="header">
+		<h1>찜 리스트</h1>
+	</div>
+	<div id="content">
+		<table>
+			<tr>
+				<th>이미지</th>	
+				<th>상품번호</th>	
+				<th>상품이름</th>	
+				<th>가격</th>	
+				<th>삭제</th>	
+			</tr>
+			
+		</table>
+	</div>
+	<div id="price">
+		
+	</div>
+	<div id="link">
+		<a href="#">주문하러 가기</a>
+		<a href="index.html">DVD 목록</a>
+	</div>
+</body>
+</html>
