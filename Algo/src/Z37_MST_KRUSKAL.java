@@ -32,7 +32,7 @@ public class Z37_MST_KRUSKAL {
 		int V = sc.nextInt(); // 정점의 개수
 		int E = sc.nextInt(); // 간선의 개수
 		
-		p = new int[V+1]; 
+		p = new int[V+1]; // 정점번호 1번부터라서?
 		rank = new int[p.length+1];
 		
 		Edge[] G = new Edge[E]; // 간선의 정보를 저장할 배열 = 간선배열
