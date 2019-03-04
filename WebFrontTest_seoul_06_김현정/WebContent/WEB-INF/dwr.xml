@@ -1,0 +1,19 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN"
+    "http://getahead.org/dwr/dwr30.dtd">
+
+<dwr>
+  <allow>
+    <create creator="new" javascript="chocolate">
+      <param name="class" value="com.ssafy.Chocolate"/>
+    </create>
+    <create creator="new" javascript="count">
+      <param name="class" value="com.ssafy.Count"/>
+    </create>
+  </allow>
+</dwr>
+
+
+
+
+

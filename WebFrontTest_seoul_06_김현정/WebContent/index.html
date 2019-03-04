@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sum DWR!</title>
+<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="/WebFrontTest/dwr/engine.js"></script>
+<script type="text/javascript" src="/WebFrontTest/dwr/util.js"></script>
+<script type='text/javascript' src='/WebFrontTest/dwr/interface/chocolate.js'></script>
+<script type='text/javascript'	src='/WebFrontTest/dwr/interface/count.js'></script>
+<script type="text/javascript">
+	$(function() {
+		$("#exec1").click(function() {
+			var digits = $('#digits').val();///////////////1.구현하세요///////// 아이디가 digits인 태그에 입력된 데이터를 읽어온다.
+			count.execute(digits, function(result) {//Count 클래스의 execute(digits)를 호출하여 그 결과를 result로 받는다.
+				///////////////2.구현하세요///////// 아이디가 result1인 태그를 찾아서 result 데이터를 출력(표현)하도록 구현한다.
+				$('#result1').text(result);
+			});
+		});
+		$("#exec2").click(function() {
+			var money = $('#money').val();///////////////3.구현하세요///////// 아이디가 money인 태그에 입력된 데이터를 읽어온다.
+			var su = $('#su').val();///////////////4.구현하세요///////// 아이디가 su인 태그에 입력된 데이터를 읽어온다.
+			chocolate.execute(money, su, function(result) {//Chocolate 클래스의 execute(money, su)를 호출하여 그 결과를 result로 받는다.
+					///////////////5.구현하세요///////// 아이디가 result2인 태그를 찾아서 result 데이터를 출력(표현)하도록 구현한다.
+					$('#result2').text(result);
+			});
+		});
+	});
+</script>
+
+<style type="text/css">
+
+
+	/* ///////////////6.구현하세요///////// 클래스가 quest인 태그들을 찾아서 설명문서와 같은 모양으로 형식을 설정하세요.
+	//(옆으로 보이기, 배경색:rgb(234,234,234, 크기, 안쪽 여백:50px, 선 등) */
+	.quest{
+		float: left;
+		background-color: rgb(234,234,234);
+		padding: 50px;
+		border: 1px solid black;
+		width: 500px;
+		height: 260px;
+	}
+	
+	.choco{
+		/* ///////////////7.구현하세요///////// 선택된 태그의 너비를 80px로 설정하고자 한다. 그 형식이  잘 반영되도록 설정하세요. */
+		display: inline-block;
+		width: 80px;
+		
+	}
+	
+	/* ///////////////8.구현하세요///////// 아이디가 result1과 result2인 태그들을 찾아서 글자 색을 blue로 변경하세요. */
+	#result1, #result2{
+		color: blue;
+	}
+	
+	
+	.btn{
+		width : 100px;
+	}
+	h2{
+		/* ///////////////9.구현하세요///////// h2 태그의 높이를 50px로 설정하세요. */
+		height: 50px;
+	}
+	div{
+		/* ///////////////10.구현하세요///////// div 태그들 사이의 여백을 10px로 설정하세요. */
+		margin: 10px;
+	}
+
+</style>
+</head>
+<body>
+	<div id="q1"  class="quest">
+		<div class="quest1">
+			<h2>숫자 빈도수 구하기</h2>
+			<div>입력 문자열 : <input type="text" id="digits" size="50"> </div>
+			<div><input type="button" id="exec1" class="btn" value="실 행"></div>			
+		</div>
+		<div class="quest1">
+		 최대 입력 빈도수 :	<span id="result1"  ></span>
+		</div>
+	</div>
+	<div id="q2" class="quest">
+		<h2>초콜릿 고르기</h2>
+		<div><span class="choco">금액:</span><input type="number" id="money" >$ </div>
+		<div><span class="choco">초콜릿:</span><input type="number" id="su" >가지 </div>
+		<div> <input type="button"	id="exec2" class="btn" value="실 행"></div>
+		<div> 초콜릿을 고를 수 있는 경우의 수 : <span id="result2">  </span></div>
+	</div>
+</body>
+</html>
