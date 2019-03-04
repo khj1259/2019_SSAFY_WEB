@@ -78,7 +78,7 @@ public class Z40_SuffixArray {
 		int index = k;
 		for (int i = 0; i < sa.length; i++) {
 			String str = s.substring(sa[i]); // 접미사
-			
+			//str.length()-LCP[i] : 중복 제거한 부분 문자열 갯수
 			if(index - (str.length()-LCP[i]) > 0) {
 				index = index - (str.length()-LCP[i]);
 			} else {
