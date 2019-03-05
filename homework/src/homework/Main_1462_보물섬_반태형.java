@@ -1,8 +1,10 @@
+package homework;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Main {
+public class Main_1462_보물섬_반태형 {
 	static String[] a;
 	static int n,m;
 	public static void main(String[] args) {
