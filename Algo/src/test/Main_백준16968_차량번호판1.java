@@ -14,15 +14,19 @@ public class Main_백준16968_차량번호판1 {
 		int d = 10;
 		for (int i = 0; i < rule.length; i++) {
 			if(rule[i].equals("d")) {
-				if(i-1 >= 0 && !rule[i-1].equals("d")) {
+				if(i-1 >= 0 && rule[i-1].equals("d")) {
+					d = 9;
+				}else {
 					d = 10;
 				}
-				cnt *= d--;
+				cnt *= d;
 			}else {
-				if(i-1 >= 0 && !rule[i-1].equals("c")) {
+				if(i-1 >= 0 && rule[i-1].equals("c")) {
+					c = 25;
+				}else {
 					c = 26;
 				}
-				cnt *= c--;
+				cnt *= c;
 			}
 		}
 		
